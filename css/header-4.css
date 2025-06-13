@@ -1,0 +1,140 @@
+/* ============================================
+   RESET & BASE STYLES
+============================================ */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* ============================================
+   HEADER PRINCIPALE (.upper-header)
+============================================ */
+.upper-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #7fa9d6, #5f87b2); /* blu pastello */
+    backdrop-filter: blur(10px); /* effetto vetro */
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(130, 160, 190, 0.6); /* bordo più chiaro */
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 0; /* niente angoli arrotondati */
+    transition: background 1.5s ease-in-out; /* transizione più lunga e morbida */
+}
+
+/* === Effetto al passaggio del mouse === */
+.upper-header:hover {
+    background: linear-gradient(135deg, #6f9cc7, #4f7499); /* variazione più scura ma coerente */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* ombra più intensa */
+}
+
+/* === Logo === */
+.logo img {
+    height: 40px;
+}
+
+/* === Titolo === */
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-title h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* ============================================
+   MENU DI NAVIGAZIONE (.nav-menu)
+============================================ */
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 115, 230, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 100px; /* o sotto l'hamburger */
+    right: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* === Link di navigazione === */
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* === Menu attivo === */
+.nav-menu.active {
+    display: flex;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+============================================ */
+@media (min-width: 768px) {
+    .nav-menu {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        background: none;
+    }
+}
+
+/* ============================================
+   NAVIGAZIONE PRINCIPALE
+============================================ */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #0073e6;
+    font-weight: bold;
+}
+
+/* ============================================
+   SOTTO-HEADER (.sub-header)
+============================================ */
+.sub-header {
+    background: linear-gradient(135deg, #0073e6, #004080);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* === Lista di navigazione nel sotto-header === */
+.sub-header ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-header ul li {
+    margin-left: 20px;
+}
+
+.sub-header ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}

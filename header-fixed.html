@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorial Headers - Hamburger</title>
-    <link rel="stylesheet" href="./css/header-ham.css">
+    <link rel="stylesheet" href="./css/header-fixed.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta name="description"
         content="Guida completa agli header in HTML e CSS. Scopri come creare header accattivanti e funzionali per il tuo sito web.">
     <meta name="keywords" content="HTML, CSS, header, tutorial, web design">
     <meta name="author" content="raffaccio">
-    <script src="./js/header-ham.js" defer></script>
+    <script src="./js/header-fixed.js" defer></script>
 </head>
 
 <body>
-
     <header class="ham-header">
         <div class="logo">
             <a href="index.html" class="logo-link" aria-label="Torna alla home">
@@ -39,47 +38,28 @@
                             stroke-dashoffset: 0;
                         }
                     </style>
-
                     <rect class="outer" x="10" y="10" width="80" height="80" rx="10" ry="10" />
                     <rect class="inner" x="20" y="20" width="60" height="60" rx="15" ry="15" />
                 </svg>
             </a>
+            <h1>Header con transizioni di immagini .svg</h1>
         </div>
-        <h1>Guida agli Headers in HTML & CSS</h1>
-        <h2>Header con Icona logo e hamburger menu</h2>
+
         <div class="hamburger" aria-label="Apri menu">
             <img src="./images/hamburger-icon.svg" alt="Menu" class="hamburger-icon">
-            <nav class="nav-menu">
-                <a href="header-home.html">Header Home</a>
-                <a href="headers.html">Headers HQ</a>
-            </nav>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
+        <nav class="nav-menu">
+            <a href="header-home.html">Header Home</a>
+            <a href="headers.html">Headers HQ</a>
+        </nav>
     </header>
-    <nav class="ham-nav">
+    <nav class="sub-header">
         <ul>
-            <li><a href="html.html">Home</a></li>
-            <li><a href="headers.html">Headers HQ</a></li>
-            <li><a href="header-ham.html">Menu Hamburger</a></li>
-            <li><a href="header-sliding.html">Menu a Slittamento</a></li>
+            <li><a href="header-fixed.html">Header Fisso</a></li>
+            <li><a href="header-modern.html">Header Moderno</a></li>
         </ul>
-    </nav>
-    <main>
-        <h2>Introduzione</h2>
-        <p>In questa sezione troverai tutorial su diversi tipi di header utilizzando HTML e CSS.</p>
-
-        <h2>Prossimi Tutorial:</h2>
-        <ul>
-            <li><strong>Headers di Base:</strong> Struttura e styling iniziale.</li>
-            <li><strong>Menu Hamburger:</strong> Come creare un menu responsive con CSS e JavaScript.</li>
-            <li><strong>Menu a Slittamento:</strong> Header con navigazione scorrevole.</li>
-            <li><strong>Effetti di Bordo:</strong> Stili avanzati con effetti di profondità.</li>
-        </ul>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 - Creato con ❤️ per i developer</p>
-    </footer>
-
 </body>
-
 </html>
