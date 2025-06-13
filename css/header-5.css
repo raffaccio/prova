@@ -11,6 +11,9 @@
     --nav-menu-text-color: white;
     --footer-background: #004080;
     --footer-text-color: white;
+    --svg-bg-outer: rgba(0, 115, 230, 0.5);
+    --svg-bg-inner: rgba(0, 115, 230, 0.3);
+    --svg-text-color: #ffffff;
 }
 
 body {
@@ -34,12 +37,18 @@ body {
     padding: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 0;
-    transition: background 1.5s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .upper-header:hover {
     background: var(--header-hover-background);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.upper-header.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .logo img {
@@ -132,6 +141,16 @@ nav ul li a {
     font-weight: bold;
 }
 
+.sub-header.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+body.sub-header-fixed {
+  padding-top: 60px; /* Altezza del sub-header per evitare sovrapposizione */
+}
+
 footer {
     text-align: center;
     padding: 20px;
@@ -150,4 +169,7 @@ body.dark-mode {
     --nav-menu-text-color: #f4f4f4;
     --footer-background: #00264d;
     --footer-text-color: #f4f4f4;
+    --svg-bg-outer: rgba(95, 135, 178, 0.5);
+    --svg-bg-inner: rgba(200, 160, 120, 0.3);
+    --svg-text-color: #ffffff;
 }
