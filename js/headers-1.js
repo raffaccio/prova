@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Nascondi upper-header se si scrolla verso il basso
         if (scrollTop > lastScrollTop && scrollTop > upperHeaderHeight) {
-            upperHeader.classList.add("hidden");
+            upperHeader.style.display = "none";
         } else if (scrollTop < lastScrollTop && scrollTop < 
             upperHeaderHeight) {
-            upperHeader.classList.remove("hidden");
+            upperHeader.style.display = "flex";
         }
 
         // Blocca sub-header in alto
