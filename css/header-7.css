@@ -16,7 +16,11 @@
     --svg-bg-inner: rgba(0, 115, 230, 0.3);
     --svg-text-color: #ffffff;
 }
-
+/* Main content padding to accommodate headers */
+.main-content {
+    padding-top: 120px; /* Space for upper-header and sub-header */
+    transition: padding-top 0.3s ease;
+}
 /* General body styles */
 body {
     font-family: Arial, sans-serif;
@@ -26,13 +30,15 @@ body {
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-/* Main content padding to accommodate headers */
-.main-content {
-    padding-top: 120px; /* Space for upper-header and sub-header */
-    transition: padding-top 0.3s ease;
+/* Class to add padding-top to the main content when upper-header is hidden */
+body.upper-header-hidden .main-content {
+    padding-top: 60px; /* Solo sub-header visibile */
 }
 
+/* Class to add padding-top to the main content when upper-header is visible */
+body:not(.upper-header-hidden) .main-content {
+    padding-top: 120px; /* Upper + sub-header visibili */
+}
 /* Header background with rounded bottom-left corner */
 .header-background {
     background: var(--header-background);
@@ -64,14 +70,16 @@ body {
 .upper-header:hover {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
-
-/* Hidden state for upper header */
+/* Class to hide the upper-header when scrolling down */
 .upper-header.hidden {
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
-
+.upper-header.no-transition {
+    transition: none !important;
+}
 /* Logo styles */
 .logo img {
     height: 40px;
@@ -181,8 +189,7 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
-
-/* Sticky sub-header */
+/* Class to make the sub-header sticky at the top */
 .sub-header.sticky {
     position: fixed;
     top: 0;
@@ -202,11 +209,10 @@ nav ul li a {
   border-top-left-radius: 10px;
 }
 
-/* Body class to adjust padding when sub-header is fixed */
+/* Class to add padding-top to the body when sub-header is sticky */
 body.sub-header-fixed {
     padding-top: 60px; /* Height of sub-header to avoid overlap */
 }
-
 /* Footer styles */
 footer {
     text-align: center;
